@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-2 g-4 pt-3">
+  {% for restaurant in restaurants %}
+  <div class="col">
+    <div class="card">
+{#      <img src="/static/restaurant/{{ restaurant.id }}.jpg" width="300px" class="card-img-top" alt="{{ restaurant.name }}">#}
+      <img src="/{{ restaurant.image }}" width="300px" class="card-img-top" alt="{{ restaurant.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ restaurant.name }}</h5>
+        <p class="card-text">Address: {{ restaurant.address }}<br>
+        Phone: {{ restaurant.phone_number }}</p>
+        <p><a href="/book/{{ restaurant.id }}"><button type="button" class="btn btn-primary">
+            Book
+        </button></a></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Reservation Completed</h1>
+
+<h2>At: {{ reservation.restaurant.name }}</h2>
+
+<h2>Date: {{ reservation.date }}</h2>
+
+<h2>Time: {{ reservation.time }} - {{ reservation.time_to }}</h2>
+
+<h2>Persons: {{ reservation.number_of_people }}</h2>
+
+{% endblock %}

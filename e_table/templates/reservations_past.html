@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1>Past Reservations</h1>
+
+    {% for r in reservations %}
+        <p>{{ r.restaurant.name }} {{ r.date }} [{{ r.time }} - {{ r.time_to }}]</p>
+    {% endfor %}
+
+{% endblock %}
